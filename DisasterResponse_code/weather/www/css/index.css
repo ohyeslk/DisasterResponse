@@ -1,0 +1,178 @@
+/* Licensed under the Apache License. See footer for details. */
+
+html, body {
+  width:  100%;
+  height: 100%;
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup-tip {
+  background-color: #F3F3F3;
+}
+
+.leaflet-container a.leaflet-popup-close-button {
+  font-size: 150%;
+  padding-right: 20px;
+  padding-top: 5px;
+}
+
+.leaflet-popup-content p {
+  margin-top: 0px;
+}
+
+.back-arrow {
+  width: 17px;
+  display: inline-block;
+  margin-left: -16px;
+  margin-top: -20px;
+  opacity: .6;
+}
+
+.back-arrow:hover {
+  width: 17px;
+  display: inline-block;
+  margin-left: -16px;
+  margin-top: -20px;
+  opacity: 1;
+  cursor: pointer;
+}
+
+.loading_gif {
+  width: 50px;
+  padding-top: 5px;
+}
+
+.date_img, .history_img, .predict_img {
+  width: 35px;
+  padding-top: 8px;
+  margin-right: 18px;
+  opacity: .7;
+}
+
+.date_img:hover, .history_img:hover, .predict_img:hover {
+  cursor: pointer;
+  opacity: 1;
+}
+
+#map {
+  width:  100%;
+  height: 100%;
+}
+
+.info {
+  background-color: #DDD;
+  padding:          1.0em 1.0em;
+}
+
+.popup-header {
+  margin-top: 0px;
+}
+
+.history-row {
+  padding-top: 1px
+}
+
+.weather-data-row {
+  padding-bottom: 2px;
+}
+
+.td-indent {
+  padding-left: 1em;
+}
+
+.td-history {
+  padding-left: 20px;
+}
+
+.key-icon {
+  text-align: center;
+}
+
+.leaflet-marker-icon {
+  display: inline-flex;
+}
+
+/* weather icons */
+.wi {
+  color:                    #000;
+  text-shadow: 0px 0px 10px #FFF;
+  margin: auto;
+}
+
+.wi.wi-popup {
+  margin-top: 5px;
+}
+
+.wi.wi-size-xs {
+  font-size:   150%;
+}
+
+.wi.wi-size-s {
+  font-size:   200%;
+}
+
+.wi.wi-size-m {
+  font-size:   300%;
+}
+
+.wi.wi-size-l {
+  font-size:   350%;
+}
+
+.wi.wi-size-xl {
+  font-size:   450%;
+}
+
+.wi.wi-size-xxl {
+  font-size:   500%;
+}
+
+.wi.wi-day-sunny {
+  color:                    #F50;
+  text-shadow: 0px 0px 5px #FF0;
+}
+
+.wi.wi-dust {
+  color:                    #000;
+  text-shadow: 0px 0px 5px #DDD;
+}
+
+.wi.wi-fog, .wi.wi-smoke {
+  color:                    #000;
+  text-shadow: 0px 0px 5px #DDD;
+}
+
+.wi.wi-cloudy {
+  color:                    #444;
+  text-shadow: 0px 0px 5px #FFF;
+}
+
+.wi.wi-sprinkle, .wi.wi-rain {
+  color:                    #00F;
+  text-shadow: 0px 0px 5px #FFF;
+}
+
+.wi.wi-snow, .wi.wi-hail, .wi.wi-sleet {
+  color:                    #FFF;
+  text-shadow: 0px 0px 5px #000;
+}
+
+.wi.wi-lightning, .wi.wi-thunderstorm {
+  color:                    #FF0;
+  text-shadow: 0px 0px 5px #000;
+}
+
+/*
+//==============================================================================
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//==============================================================================
+*/
