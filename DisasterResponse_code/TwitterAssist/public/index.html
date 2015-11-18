@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<head>
+	<title>TwitterAssist</title>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="css/materialize.css">
+	<link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+	<link rel="shortcut icon" href="StockAssist.png" />
+
+	<meta charset="UTF-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="shortcut icon" href="../favicon.ico">
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/set2.css" />
+	<!-- Compiled and minified JavaScript -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.2/js/materialize.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script src="js/classie.js"></script>
+	<script src="js/stockjson.js"></script>
+	<script type="text/javascript" src="js/jquery.transit.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+</head>
+<body>
+	<div id="twoThirds">
+		<div class="container">
+			<div class="row" id="title">
+				<h5><img src="StockAssist.png" width="5%"> Lan Luo, Kai Lu, Weining Bao, Zhixian Huang, Sichao Wang</h5>
+			</div>
+			<div class="row" id="input">
+				<span class="input input--fumi">
+					<input class="input__field input__field--fumi" type="text" id="input-23" autocomplete="off" />
+					<label class="input__label input__label--fumi" for="input-23">
+						<i class="fa fa-fw fa fa-search icon icon--fumi"></i>
+						<span class="input__label-content input__label-content--fumi"> Name</span>
+					</label>
+				</span>
+
+			</div>
+			<div class="row" id="click_row">
+				<button class="btn waves-effect waves-light" type="submit" id="click">Lookup
+					<i class="material-icons right">send</i>
+				</button>
+			</div>
+		</div>
+	</div>
+
+	<div id="oneThird">
+		<!-- <h4 class="center">Data</h4> -->
+		<div class="container">
+			<div class="row">
+				<div class="col s4" id="left-bottom">
+					<h5 class="left-align">Negative / Positive</h5>
+					<canvas id="leftChart" left="100%" right="100%">
+					</canvas>
+				</div>
+				<div class="col s8" id="right-bottom">
+					<h5 class="left-align">Prediction</h5>
+					<p class="left-align" id="prediction">
+						
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+</body>
+<!-- 
+<script>
+//all the json data
+var jsonLines = [
+{ "x1": 50, "y1": 50, "x2": 50, "y2": 350, "id": ""},
+{ "x1": 50, "y1": 350, "x2": 350, "y2": 350, "id": ""},
+{ "x1": 900, "y1": 550, "x2": 900, "y2": 750, "id": ""},
+{ "x1": 900, "y1": 750, "x2": 1200, "y2": 750, "id": ""},
+
+{ "x1": 50, "y1": 350, "x2": 110, "y2": 350, "id": "graph"},
+{ "x1": 110, "y1": 350, "x2": 170, "y2": 350, "id": "graph"},
+{ "x1": 170, "y1": 350, "x2": 230, "y2": 350, "id": "graph"},
+{ "x1": 230, "y1": 350, "x2": 290, "y2": 350, "id": "graph"},
+{ "x1": 290, "y1": 350, "x2": 350, "y2": 350, "id": "graph"},
+
+{ "x1": 625, "y1": 500, "x2": 500, "y2": 300, "id": "needle"}];
+
+var jsonRect = [
+{ "x": 920, "y": 745, "width": 50, "height": 0, "color" : "#26a69a" },
+{ "x": 1020, "y": 745, "width": 50, "height": 0, "color" : "#adebe7" },
+{ "x": 1120, "y": 745, "width": 50, "height": 0, "color" : "#1e7b75" }];
+
+var jsonText = [
+{ "x": 100, "y": 400, "text": "Stock History"},
+{ "x": 920, "y": 780, "text": "Good"},
+{ "x": 1020, "y": 780, "text": "Neutral"},
+{ "x": 1120, "y": 780, "text": "Bad"},
+{ "x": 500, "y": 500, "text": "Buy"},
+{ "x": 700, "y": 500, "text": "Sell"},
+{ "x": 900, "y": 100, "text": "Good Words"},
+{ "x": 200, "y": 500, "text": "Bad Words"}];
+
+var jsonCircles = [
+{ "x_axis": 615, "y_axis": 420, "radius": 150}];
+
+
+//creating the svg and binding everything to it
+var data;
+
+var svgContainer = d3.select("body").append("svg")
+.attr("width", 1300)
+.attr("height", 800)
+.attr("id","hi");
+
+var lines = svgContainer.selectAll("line")
+.data(jsonLines)
+.enter()
+.append("line");
+
+var rects = svgContainer.selectAll("rect")
+.data(jsonRect)
+.enter()
+.append("rect");
+
+var texts = svgContainer.selectAll("text")
+.data(jsonText)
+.enter()
+.append("text");
+
+var circles = svgContainer.selectAll("circle")
+.data(jsonCircles)
+.enter()
+.append("circle");
+
+//loading all the attributes to the objects
+var lineAttributes = lines
+.attr("x1", function (d) { return d.x1; })
+.attr("y1", function (d) { return d.y1; })
+.attr("x2", function (d) { return d.x2; })
+.attr("y2", function (d) { return d.y2; })
+.attr("stroke-width", 2)
+.attr("stroke", "#808080");
+
+var rectAttributes = rects
+.attr("x", function (d) { return d.x; })
+.attr("y", function (d) { return d.y; })
+.attr("width", function (d) { return d.width; })
+.attr("height", function (d) { return d.height; })
+.attr("fill", function (d) { return d.color; });
+
+var textLabels = texts
+.attr("x", function(d) { return d.x; })
+.attr("y", function(d) { return d.y; })
+.text( function (d) { return d.text; })
+.attr("font-family", "sans-serif")
+.attr("font-size", "20px")
+.attr("fill", "#808080");
+
+var circleAttributes = circles
+.attr("cx", function (d) { return d.x_axis; })
+.attr("cy", function (d) { return d.y_axis; })
+.attr("r", function (d) { return d.radius; })
+.attr("fill-opacity", 0)
+.attr("stroke-width", 2)
+.attr("stroke", "#808080");
+
+var words = ["hello", "there", "you"];
+
+//what happens when you click the lookup button
+$("#click").click(function(event) {
+	console.log("hello");
+jsonLines = [
+{ "x1": 50, "y1": 50, "x2": 50, "y2": 350, "id": ""},
+{ "x1": 50, "y1": 350, "x2": 350, "y2": 350, "id": ""},
+{ "x1": 900, "y1": 550, "x2": 900, "y2": 750, "id": ""},
+{ "x1": 900, "y1": 750, "x2": 1200, "y2": 750, "id": ""},
+
+{ "x1": 50, "y1": 350, "x2": 110, "y2": 350, "id": "graph"},
+{ "x1": 110, "y1": 350, "x2": 170, "y2": 350, "id": "graph"},
+{ "x1": 170, "y1": 350, "x2": 230, "y2": 350, "id": "graph"},
+{ "x1": 230, "y1": 350, "x2": 290, "y2": 350, "id": "graph"},
+{ "x1": 290, "y1": 350, "x2": 350, "y2": 350, "id": "graph"},
+
+{ "x1": 625, "y1": 500, "x2": 590, "y2": 400, "id": "needle"}];
+
+jsonRect = [
+{ "x": 920, "y": 745, "width": 50, "height": 0, "color" : "#26a69a" },
+{ "x": 1020, "y": 745, "width": 50, "height": 0, "color" : "#adebe7" },
+{ "x": 1120, "y": 745, "width": 50, "height": 0, "color" : "#1e7b75" }];
+	//getting the json request, putting it in data
+	d3.json("http://stockassist.azurewebsites.net/twitter?q="+$("#stock").val(), function(error, json) {
+		if (error) return console.warn(error);
+		data = json;
+		console.log(data);
+		visualizeit();
+	});
+
+	//doing transitions for the charts
+	d3.selectAll("rect").transition()       
+	.delay(400)
+	.duration(600)    
+	.attr("height",function(d,i){return (i+1)*50;})
+	.attr("y", function(d,i){return d.y-((i+1)*50);});
+
+	d3.selectAll("line").transition()
+	.delay(400)
+	.duration(600)  
+	.attr("x2", function(d,i){ 
+		if(d.id == "needle"){ 
+			return d.x2 + 150;
+		}else{
+			return d.x2;
+		}
+	})  
+	.attr("y1", function(d,i){ 
+		if(d.id == "graph"){ 
+			if(i%2){
+				return d.y1 - 50;
+			}else{
+				return d.y1 - 80;
+			}
+		}else{
+			return d.y1;
+		}
+	})
+	.attr("y2", function(d,i){ 
+		if(d.id == "graph"){ 
+			if(i%2){
+				return d.y2 - 80;
+			}else{
+				return d.y2 - 50;
+			}
+		}else{
+			return d.y2;
+		}
+	});
+
+	//trying to put words here
+	var texts2 = svgContainer.selectAll("text")
+		.data(words)
+		.enter()
+		.append("text")
+		.attr("x", 900)
+		.attr("y", function(d,i) { return 100+(i*100); })
+		.text( function (d) { return d; })
+		.attr("font-family", "sans-serif")
+		.attr("font-size", "20px")
+		.attr("fill", "black");
+
+
+});
+
+</script>
+-->
+
+
+

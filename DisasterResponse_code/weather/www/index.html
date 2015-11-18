@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<!-- Licensed under the Apache License. See footer for details. -->
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Weather</title>
+
+    <link rel="icon"       href="images/icon.png">
+    <link rel="stylesheet" href="bower/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bower/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="weather-icons/css/weather-icons.css">
+    <link rel="stylesheet" href="bower/leaflet/leaflet.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="css/index.css">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div id="map"></div>
+
+    <div id="icon-preload" style="font-size: 1px">
+    <i class="wi wi-cloudy"></i>
+    <i class="wi wi-day-sunny"></i>
+    <i class="wi wi-dust"></i>
+    <i class="wi wi-fog"></i>
+    <i class="wi wi-hail"></i>
+    <i class="wi wi-lightning"></i>
+    <i class="wi wi-rain"></i>
+    <i class="wi wi-sleet"></i>
+    <i class="wi wi-smoke"></i>
+    <i class="wi wi-snow"></i>
+    <i class="wi wi-sprinkle"></i>
+    <i class="wi wi-thunderstorm"></i>
+    </div>
+
+    <script src="bower/jquery/jquery.min.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <script src="bower/bootstrap/js/bootstrap.min.js"></script>
+    <script src="bower/leaflet/leaflet-src.js"></script>
+    <script src="bower/esri-leaflet/esri-leaflet.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script src="js/locations.js"></script>
+    <script src="js/code2icon.js"></script>
+    <script src="js/code2uv.js"></script>
+    <script src="js/help-text.js"></script>
+    <script src="js/key-text.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
+
+<!--
+//==============================================================================
+// Licensed under the Apache License, Version 2.0 (the "License");
+// you may not use this file except in compliance with the License.
+// You may obtain a copy of the License at
+//
+//    http://www.apache.org/licenses/LICENSE-2.0
+//
+// Unless required by applicable law or agreed to in writing, software
+// distributed under the License is distributed on an "AS IS" BASIS,
+// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+// See the License for the specific language governing permissions and
+// limitations under the License.
+//==============================================================================
+-->
