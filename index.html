@@ -35,27 +35,9 @@
 						<nav id="nav">
 							<ul>
 								<li><a href="index.html">Home</a></li>
-								<li>
-									<a href="#">Dropdown</a>
-									<ul>
-										<li><a href="#">Lorem ipsum dolor</a></li>
-										<li><a href="#">Magna phasellus</a></li>
-										<li><a href="#">Etiam dolore nisl</a></li>
-										<li>
-											<a href="#">And a submenu &hellip;</a>
-											<ul>
-												<li><a href="#">Lorem ipsum dolor</a></li>
-												<li><a href="#">Phasellus consequat</a></li>
-												<li><a href="#">Magna phasellus</a></li>
-												<li><a href="#">Etiam dolore nisl</a></li>
-											</ul>
-										</li>
-										<li><a href="#">Veroeros feugiat</a></li>
-									</ul>
-								</li>
-								<li><a href="left-sidebar.html">Left Sidebar</a></li>
-								<li><a href="right-sidebar.html">Right Sidebar</a></li>
-								<li><a href="no-sidebar.html">No Sidebar</a></li>
+								<li><a href="#banner">SMS</a></li>
+								<li><a href="#map">Weather Map</a></li>
+								<li><a href="#twitter">Twitter Analysis</a></li>
 							</ul>
 						</nav>
 
@@ -76,7 +58,8 @@
 
 			<!-- Carousel -->
 				<section class="carousel">
-					<div class="reel">
+					<div class="reel" style="overflow: visible; transform: translate(0px, 0px);">
+						<center>
 						<article>
 							<a href="#" class="image featured"><img src="images/SMS1.png" alt="" /></a>
 							<header>
@@ -103,34 +86,32 @@
 							<p>It tweets the content onto a public Twitter account. Like help sender need, place sender currently locates, etc.
 							</p>
 						</article>
-
+						</center>
 					</div>
 				</section>
 
 			<!-- Main -->
 				<div class="wrapper style2">
-
-					<article id="main" class="container special">
+					<article id="main" class="container special" style="padding-top:30px;margin-bottom:-20px">
 						<center>
-						<iframe width="640" height="360" src="https://www.youtube.com/embed/Wc7mJDYUYk0" frameborder="0" allowfullscreen></iframe>
+							<iframe width="640" height="360" src="https://www.youtube.com/embed/Wc7mJDYUYk0" frameborder="0" allowfullscreen></iframe>
 						</center>
-							<header>
 						<header>
 							<h2><a href="#">Video demo of SMS application</a></h2>
 							<p>
-								Three functions are achieved with Twitter, Google Search and GoogleMap API. The above video shows the usages of this SMS. Twilio and Heroku are actually built on AWS.
+								Three functions achieved with Twitter, Google Search and Google Map.
 							</p>
 						</header>
 
 						<footer>
-							<a href="#" class="button">Continue Reading</a>
+							<a href="#map" class="button circled scrolly">Continue Reading</a>
 						</footer>
 					</article>
 
 				</div>
 
 			<!-- Features 1 -->
-				<div class="wrapper style1">
+				<div class="wrapper style1" id="map">
 
 					<section id="features" class="container special">
 						<header>
@@ -141,10 +122,10 @@
 							<article class="4u 12u(mobile) special">
 								<a href="#" class="image featured"><img width="300" height="300" src="images/weather1.png" alt="" /></a>
 								<header>
-									<h3>Centroidal wather information</h3>
+									<h3>Centroidal weather information</h3>
 								</header>
 								<p>
-									Weather informations of the centroids are shown on the map so that it is convenient for us to only monitor the coarse view of current weather condition
+									After K-means clustering, weather informations of the centroids are shown on the map so that it is convenient for us to only monitor the coarse view of current weather condition
 								</p>
 							</article>
 							<article class="4u 12u(mobile) special">
@@ -153,7 +134,7 @@
 									<h3>Details about current location</h3>
 								</header>
 								<p>
-									By colicking calendar icon, detailed information about current location will be shown.
+									By clicking calendar icon, detailed information about current location will be shown.
 								</p>
 							</article>
 							<article class="4u 12u(mobile) special">
@@ -166,12 +147,15 @@
 								</p>
 							</article>
 						</div>
+						<footer>
+							<a href="#twitter" class="button circled scrolly">Keep going</a>
+						</footer>
 					</section>
 
 				</div>
 
 			<!-- Features 2 -->
-				<div class="wrapper style1">
+				<div class="wrapper style1" id="twitter">
 
 					<section id="features" class="container special">
 						<header>
@@ -180,30 +164,30 @@
 						</header>
 						<div class="row">
 							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img width="300" height="300" src="images/twitter1.png" alt="" /></a>
+								<a href="#" class="image featured"><img width="300" height="250" src="images/twitter1.png" alt="" /></a>
 								<header>
 									<h3>Twitter sentiment monitor</h3>
 								</header>
 								<p>
-									Insights for Twitter streams Twitter data in real time through Twitter API [14] and adds sentiment and other enrichments for multiple languages, based on deep natural language processing algorithms from IBM Social Media Analytics
+									Insights for Twitter streams Twitter data in real time through Twitter API and adds sentiment and other enrichments for multiple languages.
 								</p>
 							</article>
 							<article class="4u 12u(mobile) special">
-								<a href="#" class="image featured"><img width="300" height="300" src="images/twitter2.png" alt="" /></a>
+								<a href="#" class="image featured"><img width="300" height="250" src="images/twitter2.png" alt="" /></a>
 								<header>
-									<h3>Details about current location</h3>
+									<h3>Positive and negative classification</h3>
 								</header>
 								<p>
-									By colicking calendar icon, detailed information about current location will be shown.
+									Artifical Neural Network algorithm to classify all the twitters on the same topic
 								</p>
 							</article>
 							<article class="4u 12u(mobile) special">
 								<a href="#" class="image featured"><img width="300" height="300" src="images/hashtag.png" alt="" /></a>
 								<header>
-									<h3>Future or previous weather</h3>
+									<h3>Hottest Hashtags analysis</h3>
 								</header>
 								<p>
-									Weather of previous days or future can be checked after clicking on the timer icon.
+									Top 10 hashtags are filtered from all twitters dynamically 
 								</p>
 							</article>
 						</div>
@@ -218,23 +202,15 @@
 								<!-- Contact -->
 									<section class="contact">
 										<header>
-											<h3>Nisl turpis nascetur interdum?</h3>
+											<h3>Want a close look?</h3>
 										</header>
-										<p>Urna nisl non quis interdum mus ornare ridiculus egestas ridiculus lobortis vivamus tempor aliquet.</p>
-										<ul class="icons">
-											<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-											<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-											<li><a href="#" class="icon fa-instagram"><span class="label">Instagram</span></a></li>
-											<li><a href="#" class="icon fa-pinterest"><span class="label">Pinterest</span></a></li>
-											<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-											<li><a href="#" class="icon fa-linkedin"><span class="label">Linkedin</span></a></li>
-										</ul>
+										<a href="https://github.com/ohyeslk/DisasterResponse">Source code at Github</a>
 									</section>
 
 								<!-- Copyright -->
 									<div class="copyright">
 										<ul class="menu">
-											<li>&copy; Untitled. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+											<li>&copy; All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 										</ul>
 									</div>
 
